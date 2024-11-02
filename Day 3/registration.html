@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Event Management</title>
+    <style>
+        body {
+            font-family: all;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url(./registration.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        @font-face {
+    font-family: all;
+    src: url(./Merienda-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: piu;
+    src: url(./MorrisRomanBlack.otf);
+}
+        .register-container {
+            background-image: url(./login1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 100px;
+            padding: 4rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .register-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .register-header h1 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .register-header p {
+            color: #151717;
+            margin: 0;
+        }
+        .register-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .register-button {
+            background-color: #4111d1;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .register-button:hover {
+            background-color: #2980b9;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 1rem;
+            color: #0e1010;
+        }
+        .login-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <h1 style="font-family: piu;">Event Management</h1>
+            <p>Create your account</p>
+        </div>
+        <form class="register-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+    </div>
+</body>
+</html>

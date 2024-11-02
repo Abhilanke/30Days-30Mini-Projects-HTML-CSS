@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3</title>
+    <style>
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+    
+}
+body{
+    font-family: all;
+    
+}
+@font-face {
+    font-family: all;
+    src: url(./Merienda-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: abhi;
+    src: url(./COCOGOOSELETTERPRESS\ TRIAL.ttf);
+}
+@font-face {
+    font-family: kunal;
+    src: url(./MorrisRomanBlack.ttf);
+}
+@font-face {
+    font-family: piu;
+    src: url(./MorrisRomanBlack.otf);
+}
+@font-face {
+    font-family: amol;
+    src: url(./SwipeRaceDemo.ttf);
+}
+.container{
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+
+}
+header{
+    background-color: #ffffff;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    
+    height: 10%;
+    top: 0;
+    z-index: 1000;
+   
+}
+nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 800;
+    color:rgb(41, 42, 42);
+}
+.nav-links{
+    display: flex;
+   list-style: none;
+}
+.nav-links li {
+            margin-left: 30px;
+        }
+.nav-links a{
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover{
+    color: rgb(48, 221, 14);
+}
+#hero{
+    background-image: url(./event1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.hero-content h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.hero-content p{
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+.btn{
+    display: inline-block;
+    background-color: blue;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease ;
+
+}
+.btn:hover{
+    background-color: rgb(11, 214, 89);
+}
+#events{
+    padding: 80px 0;
+}
+.Section-title{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: rgb(62, 220, 10);
+    font-family: abhi;
+}
+.events-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 30px;
+
+} 
+.event-card{
+    background-color: #c6d312;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+} 
+.event-card:hover {
+            transform: translateY(-8px);
+        }
+.event-image{
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+
+        }
+        .event-details {
+            padding: 20px;
+        }
+        .event-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        .event-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .event-description {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        #registration {
+            background-color: var(--primary-color);
+            color: #151414;
+            padding: 80px 0;
+        }
+
+        .registration-form {
+            background-color: #dcd108;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .Section-title1{
+            text-align: center;
+            color: #121111;
+            
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #240cd6;
+        }
+
+        footer {
+            color: #121111;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+/* about Section */
+#about {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+          
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        .h11 {
+            font-size: 2.5em;
+            color: #39c90d;
+            margin-bottom: 20px;
+        }
+        .p1 {
+            margin-bottom: 15px;
+        }
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .services-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .services-list li::before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+        }
+        .img1 {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* contect Section */
+        #contact {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+           
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .h111 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #dad30c;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .contact-info {
+            background-color: #dad30c;
+            padding: 30px;
+            border-radius: 10px;
+
+        }
+        .contact-info h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .map {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .map img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <header >
+        <div>
+            <!-- <div>
+                <h1>Event <Span>Managemnet</Span></h1>
+            </div> -->
+        <nav class="container">
+            <div class="logo" >EM-Management</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contect">Contect</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <section id="hero">
+        <div class="hero-content">
+            <h1 style="font-family: abhi;">Manage Your Events with Ease</h1>
+            <p style="font-family: kunal;">Discover, plan, and attend amazing events all in one place</p>
+            <a class="btn" href="">Book Event</a>
+        </div>
+        
+    </section>
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h1 class="h11" style="font-family: piu;" >About Our Event Management</h1>
+                <p class="p1">Welcome to our world of extraordinary events! With over a decade of experience, we specialize in creating unforgettable moments that leave lasting impressions.</p>
+                <p class="p1">Our team of passionate professionals is dedicated to turning your vision into reality, handling every detail with precision and creativity.</p>
+                <h2 class="h11" style="font-family: piu;" >Our Services</h2>
+                <ul class="services-list">
+                    <li>Corporate Events</li>
+                    <li>Weddings</li>
+                    <li>Birthday Celebrations</li>
+                    <li>Product Launches</li>
+                    <li>Conferences and Seminars</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img class="img1" src="./about.jpg" alt="Event Management Team in Action">
+            </div>
+        </div>
+    </section>
+<
+    <section id="events">
+<div class="container">
+    <h2 class="Section-title">
+        Upcoming Events
+    </h2>
+    <div class="events-grid">
+        <div class="event-card">
+            <div class="event-image" style="background-image: url(./CorporateEvents.jpg); background-repeat: no-repeat;"></div>
+            <div class="event-details">
+                <h3 class="event-title">Tech Innovation Summit</h3>
+                <div class="event-info">
+                    <span>Desember 15-17, 2024</span>
+                    <span>Kharadi Pune, India</span>
+                </div>
+                <p class="event-description">Join industry leaders and innovators for three days of cutting-edge technology discussion and networking opportunities.</p>
+                <a href="" class="btn">Register Now</a>
+            </div>
+        </div>
+        <div class="event-card">
+            <div class="event-image" style="background-image: url(./event.jpg); background-repeat: no-repeat;"></div>
+            <div class="event-details">
+                <h3 class="event-title">Summer Music Fest</h3>
+                <div class="event-info">
+                    <span>July 8-10, 2024</span>
+                    <span>Pune, India</span>
+                </div>
+                <p class="event-description">Experience three days of non-stop music from top artists across various genres. Food, art, and unforgettable memories await!</p>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+        </div>
+        <div class="event-card">
+            <div class="event-image" style="background-image: url(./meating.jpg); background-repeat: no-repeat;"></div>
+            <div class="event-details">
+                <h3 class="event-title">Global Business Forum</h3>
+                <div class="event-info">
+                    <span>September 5-6, 2024</span>
+                    <span>Nashik, India</span>
+                </div>
+                <p class="event-description">Connect with global business leaders and gain insights into emerging trends shaping the future of international commerce.</p>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+    </div>
+</div>
+    </section>
+    <section id="registration">
+        <div class="container">
+            
+            <form class="registration-form">
+                <h2 class="Section-title1" style="font-family: amol;">Register for an Event</h2><br>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="event">Select Event</label>
+                    <select id="event" name="event" required>
+                        <option value="">Choose an event</option>
+                        <option value="tech-summit">Tech Innovation Summit</option>
+                        <option value="music-fest">Summer Music Fest</option>
+                        <option value="business-forum">Global Business Forum</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Register Now" class="btn">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="Section-title">Contact Us</h1>
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h2>Send us a message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2>Get in touch</h2>
+                <p><strong>Address:</strong> Ganesh Event Management, Pune, Maharastra, India</p>
+                <p><strong>Phone:</strong> +91 9732822351</p>
+                <p><strong>Email:</strong> info@eventmanagement.com</p>
+                <p><strong>Working Hours:</strong> Monday - Friday: 9am - 6pm</p>
+                <div class="map">
+                    <img src="./contect.jpg" alt="Map">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="container" style="text-align: center;">
+        <p>&copy; 2024 Event Management, All Right Reserved. Designed by Abhi Lanke</p>
+    </footer>
+</body>
+</html>
