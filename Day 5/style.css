@@ -1,0 +1,530 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f0f4f8;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #20e107, #16d608);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header .support {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #b0e6ff;
+}
+
+/* Tabs Navigation */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 15px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.tab {
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #444;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    flex: 1; /* Each tab takes equal width on smaller screens */
+    text-align: center;
+}
+
+.tab.active {
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+}
+
+.tab:hover {
+    background-color: #666;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    width: calc(25% - 20px); /* Each input takes 25% width on large screens */
+    min-width: 150px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #11d815;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 5px;
+}
+
+.search-btn:hover {
+    background-color: #0dcd19;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .tab {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .search-bar {
+        flex-direction: column; /* Stacks the inputs vertically */
+        align-items: stretch; /* Ensures full-width inputs */
+    }
+
+    .input, .search-btn {
+        width: 100%; /* Full width on smaller screens */
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .header .support {
+        font-size: 12px;
+    }
+
+    .tab {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .search-bar {
+        padding: 15px;
+    }
+
+    .input {
+        font-size: 12px;
+    }
+
+    .search-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+/* add section css */
+.ads-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ads-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.ads-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.ad-card {
+    background-color: #fff;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.ad-card img {
+    width: 100%;
+    height: auto;
+}
+
+.ad-card p {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.ad-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styles for Ads Section */
+@media (max-width: 768px) {
+    .ads-container {
+        gap: 10px;
+    }
+
+    .ad-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+/* add css hotel style */
+.hotel-booking-section {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-booking-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hotel-booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Responsive behavior */
+}
+
+.hotel-booking-container form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Responsive behavior */
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #08d208;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #1ae40c;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #28e00b;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hotel-booking-container form {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+/* hotel booking section */
+
+
+section.welcome-pack {
+    background-color: #26e50c;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    min-height: 400px;
+    align-items: center;
+}
+
+.promo-content {
+    flex: 1;
+    color: white;
+}
+
+.promo-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.promo-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.savings-card {
+    flex: 1;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+}
+
+.savings-amount {
+    background-color: #fff0f5;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.savings-amount h2 {
+    color: #ff4081;
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.limited-offer {
+    color: #666;
+    margin: 15px 0;
+}
+
+.sign-in-button {
+    background-color: #39d30f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+}
+
+.hotel-cards {
+    flex: 2;
+    display: flex;
+    gap: 20px;
+}
+
+.hotel-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.hotel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hotel-info {
+    padding: 15px;
+}
+
+.location {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.hotel-name {
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.rating-score {
+    background-color: #16e00b;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.reviews {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.discount-tag {
+    background-color: #ff4081;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.price {
+    text-align: right;
+}
+
+.abhi {
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    section.welcome-pack {
+        flex-direction: column;
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .promo-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .savings-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hotel-cards {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hotel-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hotel-image {
+        height: 150px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-title {
+        font-size: 2em; /* Smaller font size for smaller devices */
+    }
+
+    .savings-amount h2 {
+        font-size: 1.5em; /* Smaller font size for savings */
+    }
+
+    .sign-in-button {
+        font-size: 0.9em; /* Adjust button font size */
+    }
+
+    .hotel-info {
+        padding: 10px; /* Reduce padding in hotel info */
+    }
+
+    .rating {
+        flex-direction: column; /* Stack rating and reviews */
+        align-items: flex-start;
+    }
+
+    .rating-score {
+        margin-bottom: 5px; /* Add space between rating and reviews */
+    }
+
+    .price-info {
+        flex-direction: column; /* Stack price elements */
+        align-items: flex-start; /* Align to start */
+    }
+}
+.hero {
+    background-color: #3fe009;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+footer {
+    color: #fff;
+    text-align: center;
+}
+.product-image {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 40px 0;
+    border-radius: 20px;
+}
+
