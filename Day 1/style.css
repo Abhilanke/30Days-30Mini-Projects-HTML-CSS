@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.shaddow {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* HEADER CSS */
+
+header,
+#header {
+  margin-top: 5px;
+  border-top: 3px solid #2c4152;
+}
+.navbar {
+  display: flex;
+  position: fixed;
+  flex-wrap: wrap;
+  bottom: 87.5%;
+  /* height: 90px; */
+  width: 100%;
+  background-color: white;
+}
+
+.navlogo {
+  padding-top: 20px;
+  width: 30%;
+}
+#logo {
+  margin-left: 35%;
+  margin-top: 4px;
+  width: 130px;
+  height: 37.7px;
+}
+.menu {
+  width: 40%;
+  margin-top: 60px;
+ 
+}
+ul,
+a {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  color: black;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+a:hover {
+  font-weight: 700;
+}
+.search {
+  width: 17%;
+  border: 1px solid #2c4152;
+  border-radius: 17px;
+  margin-top: 55px;
+  margin-bottom: 5px;
+
+  background-color: rgb(255, 253, 237);
+  display: flex;
+  justify-content: space-evenly;
+}
+#search {
+  border-radius: 17px;
+  border: none;
+  outline: none;
+  padding: 0 20px 0 12px;
+  width: 320px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+  background-color: rgb(255, 253, 237);
+}
+
+/* MAIN CSS */
+
+section {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 570px; */
+  background-color: rgb(245, 248, 249);
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.04);
+}
+
+img {
+  height: 400px;
+  width: 280px;
+}
+
+h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(151, 35, 201);
+}
+span {
+  margin-top: 5px;
+  font-size: 20px;
+  color: rgb(5, 109, 17);
+  display: block;
+  text-align: center;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: rgb(7, 11, 31);
+  display: block;
+  text-align: center;
+}
+
+.banner1 {
+  margin-top: 90px;
+}
+#banner,
+.banner {
+  display: block;
+  width: 100%;
+  height: 390px;
+  background-color: rgb(245, 248, 249);
+}
+#bannerbottom,
+.bannerbottom {
+  display: block;
+  width: 100%;
+  height: 95px;
+  background-color: rgb(245, 248, 249);
+}
+
+/* FOOTER CSS */
+
+footer {
+  background-color: rgb(44, 65, 82);
+  padding-top: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 350px;
+  color: #cccccc;
+  text-align: center;
+}
+.footer {
+  width: 100%;
+  height: 350px;
+
+  justify-content: space-around;
+  background-color: rgb(44, 65, 82);
+}
+.foot {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  color: #cccccc;
+}
+.foot > li a {
+  margin: 10px 10px;
+  color: #cccccc;
+  font-size: 12px;
+}
+.hr {
+  margin: 0;
+  border-top: 1px solid #cccccc;
+  height: 1px;
+}
+.pay-method {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(44, 65, 82);
+}
+
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #cccccc;
+  margin: 10px 20px 20px 20px;
+}
+.payment-logos {
+  display: flex;
+}
+.paylogo,
+.fa-brand {
+  margin-top: 20px;
+  margin-right: 50px;
+  height: 30px;
+  width: 40px;
+}
+.fa-brands {
+  font-size: 50px;
+  margin-right: 30px;
+  color: #cccccc;
+}
