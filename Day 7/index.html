@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            padding: 0 20px;
+        }
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: #1f1f1f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e76f51;
+            text-decoration: none;
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            color: #f5f5f5;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e76f51;
+        }
+        /* Hero section styles */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            background: url('./img.jpg') no-repeat center center/cover;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            color: #fff;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #d3d3d3;
+        }
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #e76f51;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #f4a261;
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+        /* Services section styles */
+        .services {
+            padding: 4rem 0;
+            background-color: #1f1f1f;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #e76f51;
+            margin-bottom: 2rem;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(242, 237, 237, 0.966);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            margin-bottom: 1rem;
+        }
+        .service-card p {
+            color: #d3d3d3;
+        }
+        /* Gallery section styles */
+        .gallery {
+            padding: 4rem 0;
+            background-color: #121212;
+        }
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #e76f51;
+            margin-bottom: 2rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+        /* About section styles */
+        .about {
+            padding: 4rem 0;
+            background-color: #1f1f1f;
+        }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+        .about h2 {
+            font-size: 2.5rem;
+            color: #e76f51;
+            margin-bottom: 1.5rem;
+        }
+        .about p {
+            color: #d3d3d3;
+            line-height: 1.6;
+        }
+        /* Contact section styles */
+        .contact {
+            padding: 4rem 0;
+            background-color: #121212;
+        }
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #e76f51;
+            margin-bottom: 2rem;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #1f1f1f;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(242, 237, 237, 0.966);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #f5f5f5;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            background-color: #e76f51;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #f4a261;
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+        /* Footer styles */
+        footer {
+            padding: 2rem 0;
+            background-color: #1f1f1f;
+            text-align: center;
+            color: #d3d3d3;
+        }
+        footer p {
+            margin: 0.5rem 0;
+        }
+        footer a {
+            color: #e76f51;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #f4a261;
+        }
+        /* Video section styles */
+        .video-section {
+            padding: 4rem 0;
+            background-color: #1f1f1f;
+        }
+        .video-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #e76f51;
+            margin-bottom: 2rem;
+            
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 40px;
+        }
+        .video-card {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(242, 237, 237, 0.966);
+        }
+        .video-card iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Photo section styles */
+        .photo-section {
+            padding: 4rem 0;
+            background-color: #121212;
+        }
+        .photo-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #e76f51;
+            margin-bottom: 2rem;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 40px;
+            
+        }
+        .photo-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(242, 237, 237, 0.966);
+           
+        }
+        .photo-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+         /* Photoshoot Packages Section Styles */
+         .packages-section {
+            padding: 4rem 0;
+            background-color: #0d0d0d;
+        }
+        .packages-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #e76f51;
+            margin-bottom: 2rem;
+        }
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        .package-card {
+            background-color: hsl(0, 3%, 6%);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(242, 237, 237, 0.966);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .package-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+        .package-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .package-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .package-title {
+            font-size: 1.5rem;
+            color: hwb(0 91% 6%);
+            margin-bottom: 1rem;
+        }
+        .package-description {
+            font-size: 1rem;
+            color: hsl(0, 12%, 93%);
+            margin-bottom: 1rem;
+        }
+        .package-price {
+            font-size: 1.25rem;
+            color: #e76f51;
+            font-weight: bold;
+        }
+        .btn-book {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #e76f51;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-book:hover {
+            background-color: #d65f41;
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+                /* Photographer Styles Section Styles */
+                .styles-section {
+            padding: 4rem 0;
+            background-color: hsl(0, 0%, 5%);
+        }
+        .styles-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #f5f9fa;
+            margin-bottom: 2rem;
+        }
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        .style-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(242, 237, 237, 0.966);
+            transition: transform 0.3s;
+        }
+        .style-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(211, 230, 6, 0.966);
+        }
+        .style-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .style-content {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .style-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .style-description {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        .kunal{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="container">
+        <a href="#" class="logo">Photography</a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Preserving Moments That Matter</h1>
+            <p>Professional photography that tells your unique story.</p><br>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="services" class="services container">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <img class="kunal" src="./img7.jpg" alt="">
+                <h3>Portrait Photography</h3>
+                <p>Personalized portrait sessions to capture your essence.</p>
+            </div>
+            <div class="service-card">
+                <img class="kunal" src="./img5.jpg" alt="">
+                <h3>Wedding Photography</h3>
+                <p>Capturing the magic of your special day with timeless photos.</p>
+            </div>
+            <div class="service-card">
+                <img class="kunal" src="./img6.jpg" alt="">
+                <h3>Event Photography</h3>
+                <p>Professional coverage for all types of events.</p>
+            </div>
+        </div>
+    </section>
+     <!-- Photoshoot Packages Section -->
+     <section id="packages" class="packages-section container">
+        <h2>Photoshoot Packages</h2>
+        <div class="package-grid">
+            <!-- Package 1 -->
+            <div class="package-card">
+                <img src="./img5.jpg" alt="Wedding Photoshoot">
+                <div class="package-content">
+                    <h3 class="package-title">Wedding Photoshoot</h3>
+                    <p class="package-description">Capture your special day with stunning photos that last a lifetime.</p>
+                    <p class="package-price">Starting at 1500</p>
+                    <a href="#contact" class="btn-book">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card">
+                <img src="./img7.jpg" alt="Portrait Photoshoot">
+                <div class="package-content">
+                    <h3 class="package-title">Portrait Photoshoot</h3>
+                    <p class="package-description">Professional portraits for personal or business use.</p>
+                    <p class="package-price">Starting at 300</p>
+                    <a href="#contact" class="btn-book">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card">
+                <img src="./product.jpg" alt="Product Photoshoot">
+                <div class="package-content">
+                    <h3 class="package-title">Product Photoshoot</h3>
+                    <p class="package-description">Showcase your products with high-quality professional photos.</p>
+                    <p class="package-price">Starting at 500</p>
+                    <a href="#contact" class="btn-book">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Package 4 -->
+            <div class="package-card">
+                <img src="./event.jpg" alt="Event Photoshoot">
+                <div class="package-content">
+                    <h3 class="package-title">Event Photoshoot</h3>
+                    <p class="package-description">Capture unforgettable moments at your events with quality photos.</p>
+                    <p class="package-price">Starting at 800</p>
+                    <a href="#contact" class="btn-book">Book Now</a>
+                </div>
+            </div>
+            <!-- Package 4 -->
+            <div class="package-card">
+                <img src="./img9.jpg" alt="Fashion photography">
+                <div class="package-content">
+                    <h3 class="package-title">Fashion photography</h3>
+                    <p class="package-description">Capture unforgettable moments at your events with quality photos.</p>
+                    <p class="package-price">Starting at 700</p>
+                    <a href="#contact" class="btn-book">Book Now</a>
+                </div>
+            </div>
+            <!-- Package 4 -->
+            <div class="package-card">
+                <img src="./img10.jpg" alt="Nature photography">
+                <div class="package-content">
+                    <h3 class="package-title">Nature photography</h3>
+                    <p class="package-description">Capture unforgettable moments at your events with quality photos.</p>
+                    <p class="package-price">Starting at 500</p>
+                    <a href="#contact" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Photographer Styles Section -->
+    <section id="styles" class="styles-section">
+        <h2>Photographer Styles</h2>
+        <div class="style-grid">
+            <!-- Style 1 -->
+            <div class="style-card">
+                <img src="./anuu.jpg" alt="Documentary Style">
+                
+            </div>
+
+            <!-- Style 2 -->
+            <div class="style-card">
+                <img src="./style1.jpg" alt="Fine Art Style">
+                 
+            </div>
+
+            <!-- Style 3 -->
+            <div class="style-card">
+                <img src="./anu2.jpg" alt="Lifestyle Style">
+                 
+            </div>
+
+            <!-- Style 4 -->
+            <div class="style-card">
+                <img src="./style3.jpg" alt="Fashion Style">
+                 
+            </div>
+             <!-- Style 4 -->
+             <div class="style-card">
+                <img src="./style4.jpg" alt="Fashion Style">
+                 
+            </div>
+             <!-- Style 4 -->
+             <div class="style-card">
+                <img src="./anu3.jpg" alt="Fashion Style">
+                 
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery container">
+        <h2>Our Gallery</h2>
+    </section>
+    <!-- Video Section -->
+    <section id="videos" class="video-section container">
+        <h2>Our Videos</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <iframe src="./video8.mp4" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="./video2.mp4" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="./video3.mp4" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+        <div class="video-grid">
+            <div class="video-card">
+                <iframe src="video4.mp4" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="./video5.mp4" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="./video6.mp4" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Section -->
+    <section id="photos" class="photo-section container">
+        <h2>Our Photos</h2>
+        <div class="photo-grid">
+            <div class="photo-item"><img src="./anuu.jpg" alt="Photo 1"></div>
+            <div class="photo-item"><img src="./style1.jpg" alt="Photo 2"></div>
+            <div class="photo-item"><img src="./style2.jpg" alt="Photo 3"></div>
+            <div class="photo-item"><img src="./style3.jpg" alt="Photo 4"></div>
+            <div class="photo-item"><img src="./style4.jpg" alt="Photo 5"></div>
+            <div class="photo-item"><img src="./style5.jpg" alt="Photo 6"></div>
+            <div class="photo-item"><img src="./style6.jpg" alt="Photo 6"></div>
+            <div class="photo-item"><img src="./style7.jpg" alt="Photo 6"></div>
+            <div class="photo-item"><img src="./anu3.jpg" alt="Photo 6"></div>
+            <div class="photo-item"><img src="./style.jpg" alt="Photo 6"></div>
+        </div>
+    </section>
+
+    <section id="about" class="about container">
+        <div class="about-content">
+            <img class="kunal" src="./img.jpg" alt="">
+            <h2>About Us</h2>
+            <p>At Pixel Perfect, we believe every photograph should tell a story. Our experienced photographers are dedicated to capturing the beauty and emotion in every moment.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact container">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Photography All rights reserved Designed by Abhi Lanke.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
