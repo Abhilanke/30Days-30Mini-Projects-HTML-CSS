@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff3333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+             
+            
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff3333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('./phoo.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+         
+
+        /* About Section */
+        .about {
+            background-color: #f9f9f9;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 400px;
+            background-image: url('./photo2.jpg');
+            background-size: cover;
+            border-radius: 10px;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Classes Section */
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .class-card {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .class-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .class-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+        }
+
+        /* BMI Calculator Section */
+        .bmi-calculator {
+            background-color: #000;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .bmi-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .calculator-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f9f9f9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .features-grid,
+            .classes-grid,
+            .blog-grid,
+            .contact-grid,
+            .bmi-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        .kunal{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">FitLife</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h4>ARE YOU READY?</h4>
+                <h1>JOIN THE BEST GYM TODAY</h1>
+                <p>Join our state-of-the-art fitness facility and start your journey to a healthier lifestyle today.</p>
+                <a href="#contact" class="btn">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image"></div>
+                <div class="about-content">
+                    <h2>About Us</h2>
+                    <p>With over 10 years of experience, we've helped thousands of people achieve their fitness goals. Our state-of-the-art facility and expert trainers are here to guide you every step of the way.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features section-padding" style="background-color: #000;">
+        <div class="container">
+            <h2 class="text-center" style="color: white;">Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img class="kunal" src="./photo3.jpg" alt="">
+                    <h3>Expert Trainers</h3>
+                    <p>Our certified trainers will create a personalized plan for your success.</p>
+                </div>
+                <div class="feature-card">
+                    <img class="kunal" src="./photo5.jpg" alt="">
+                    <h3>Modern Equipment</h3>
+                    <p>State-of-the-art equipment to help you achieve your fitness goals.</p>
+                </div>
+                <div class="feature-card">
+                    <img class="kunal" src="./photo6.jpg" alt="">
+                    <h3>Flexible Classes</h3>
+                    <p>Choose from a variety of classes that fit your schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="classes section-padding" >
+        <div class="container">
+            <h2 class="text-center">Our Classes</h2>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <img src="./photo7.jpg" alt="Yoga Class">
+                    <div class="class-info">
+                        <h3>Yoga</h3>
+                        <p>Find your inner peace</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="./photo8.jpg" alt="CrossFit Class">
+                    <div class="class-info">
+                        <h3>CrossFit</h3>
+                        <p>Push your limits</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="./photo11.jpg" alt="Spinning Class">
+                    <div class="class-info">
+                        <h3>Spinning</h3>
+                        <p>Cardio at its best</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BMI Calculator Section -->
+    <section class="bmi-calculator">
+        <div class="container">
+            <div class="bmi-content">
+                <div class="bmi-text">
+                    <h2>Calculate your BMI</h2>
+                    <p>Body Mass Index (BMI) is a simple calculation using your height and weight that is used to work out if your weight is healthy.</p>
+                </div>
+                <div class="calculator-form">
+                    <input type="number" placeholder="Weight (KG)">
+                    <input type="number" placeholder="Height (CM)">
+                    <input type="number" placeholder="Age">
+                    <input type="text" placeholder="Gender">
+                    <button class="btn">Calculate Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('./trip.jpg')"></div>
+                    <div class="blog-content">
+                        <h3>Nutrition Tips</h3>
+                        <p>Essential nutrition tips for muscle building and fat loss.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('./trip1.jpg')"></div>
+                    <div class="blog-content">
+                        <h3>Workout Plans</h3>
+                        <p>Effective workout plans for beginners and advanced.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('./trip2.jpg')"></div>
+                    <div class="blog-content">
+                        <h3>Success Stories</h3>
+                        <p>Real transformation stories from our members.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Email: info@fitlifepro.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Address: 123 Fitness Street, Gym City, GC 12345</p>
+                </div>
+                <div class="contact-form">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea rows="5" placeholder="Message"></textarea>
+                    <button class="btn">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 FitLife All rights reserved Designed by Abhi Lanke.</p>
+        </div>
+    </footer>
+</body>
+</html>
