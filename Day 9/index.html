@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Animal Wellbeing Center</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background-image: url('./photo.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        .about-image {
+            width: 60%;
+            max-width: 60%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 1rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Animal Wellbeing Center</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#adoption">Adoption</a></li>
+                <li><a href="#care">Care Tips</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Paws & Hearts</h1>
+                <p>Dedicated to animal wellbeing, adoption, and care</p>
+                <a href="#adoption" class="btn">Adopt Now</a>
+            </div>
+        </section>
+
+        <section id="about" class="container">
+
+            <h2>About Us</h2>
+            <img class="about-image" src="./photo1.jpg" alt="Dog for adoption">
+            <p>Paws & Hearts is a non-profit organization committed to improving the lives of animals through adoption, education, and community outreach. Our mission is to create a world where every animal has a loving home and receives the care they deserve.</p>
+        </section>
+
+        <section id="adoption" class="container">
+            <h2>Adoption</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="./photo1.jpg" alt="Dog for adoption">
+                    <h3>Buddy</h3>
+                    <p>Friendly Labrador, 3 years old</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="./photo2.jpg" alt="Cat for adoption">
+                    <h3>Whiskers</h3>
+                    <p>Playful Tabby, 2 years old</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="./photo3.jpg" alt="Rabbit for adoption">
+                    <h3>Hoppy</h3>
+                    <p>Gentle Lop, 1 year old</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="./photo1.jpg" alt="Dog for adoption">
+                    <h3>Buddy</h3>
+                    <p>Friendly Labrador, 3 years old</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="./photo2.jpg" alt="Cat for adoption">
+                    <h3>Whiskers</h3>
+                    <p>Playful Tabby, 2 years old</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="./photo3.jpg" alt="Rabbit for adoption">
+                    <h3>Hoppy</h3>
+                    <p>Gentle Lop, 1 year old</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="care" class="container">
+            <h2>Care Tips</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Nutrition</h3>
+                    <p>Learn about proper diet and feeding schedules for different animals.</p>
+                </div>
+                <div class="card">
+                    <h3>Exercise</h3>
+                    <p>Discover fun activities to keep your pets healthy and active.</p>
+                </div>
+                <div class="card">
+                    <h3>Grooming</h3>
+                    <p>Find out how to maintain your pet's hygiene and appearance.</p>
+                </div>
+                <div class="card">
+                    <h3>Health</h3>
+                    <p>Get information on common health issues and preventive care.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-involved" class="container">
+            <h2>Get Involved</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Volunteer</h3>
+                    <p>Help us care for animals and organize events.</p>
+                    <a href="#" class="btn">Sign Up</a>
+                </div>
+                <div class="card">
+                    <h3>Donate</h3>
+                    <p>Support our mission with a one-time or recurring donation.</p>
+                    <a href="#" class="btn">Donate Now</a>
+                </div>
+                <div class="card">
+                    <h3>Foster</h3>
+                    <p>Provide a temporary home for animals in need.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024  Animal Wellbeing Center All rights reserved Designed by Abhi Lanke.</p>
+        </div>
+    </footer>
+</body>
+</html>
