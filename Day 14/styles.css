@@ -1,0 +1,220 @@
+:root {
+    --primary-color: #00f7ff;
+    --secondary-color: #1a1f2c;
+    --background-color: #141824;
+    --card-bg: rgba(26, 31, 44, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+}
+
+body.dark-theme {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+
+.navbar-brand .brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--secondary-color);
+}
+
+/* Dashboard Cards */
+.dashboard-container {
+    padding: 2rem 1rem;
+}
+
+.dashboard-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height: 100%;
+}
+
+.dashboard-card .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+}
+
+.dashboard-card .card-header h2,
+.dashboard-card .card-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Chart Container */
+.chart-container {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.placeholder-chart {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,247,255,0.1) 0%, rgba(26,31,44,0.1) 100%);
+}
+
+/* Circular Progress */
+.circular-progress {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary-color) 2%, var(--secondary-color) 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+}
+
+.circular-progress.small {
+    width: 100px;
+    height: 100px;
+}
+
+.circular-progress.small::before {
+    width: 80px;
+    height: 80px;
+}
+
+.progress-value {
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.progress-label {
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Table Styles */
+.table-dark {
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.table-dark td {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Signal Controls */
+.range-slider .form-range {
+    background-color: var(--primary-color);
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: var(--primary-color);
+}
+
+.signal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Strategy Stats */
+.strategy-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+.text-success {
+    color: var(--primary-color) !important;
+}
+
+.text-danger {
+    color: #ff4d4d !important;
+}
+
+/* Button Styles */
+.btn-outline-info {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-info:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .circular-progress {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .circular-progress::before {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 10px;
+    }
+}
+

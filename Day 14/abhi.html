@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Trader Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/placeholder.svg?height=40&width=40" alt="Smart Trader Logo" class="me-2">
+                <span class="brand-text">SMART TRADER</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MARKET</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT US</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light me-2">LOG IN</button>
+                    <button class="btn btn-primary">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Dashboard -->
+    <div class="container-fluid dashboard-container">
+        <div class="row g-3">
+            <!-- Home Section -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>HOME</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="circular-progress">
+                            <div class="progress-value">2%</div>
+                            <div class="progress-label">MARKET</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stock Market Section -->
+            <div class="col-lg-8">
+                <div class="card dashboard-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2>STOCK MARKET</h2>
+                        <div>
+                            <button class="btn btn-sm btn-outline-info me-2">LOG IN</button>
+                            <button class="btn btn-sm btn-info">I LOOCK</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <!-- Placeholder for candlestick chart -->
+                            <div class="placeholder-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard -->
+    <div class="container-fluid dashboard-container">
+        <div class="row g-3">
+            <!-- CHART Section -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>CHART</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="circular-progress">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategis Section -->
+            <div class="col-lg-8">
+                <div class="card dashboard-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2>Strategis</h2>
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <!-- Placeholder for candlestick chart -->
+                            <div class="placeholder-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Market Dashboard -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>MARKET DASHBOARD</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-dark">
+                            <tbody>
+                                <tr>
+                                    <td>BTC</td>
+                                    <td>0.34</td>
+                                    <td class="text-success">↑6.88</td>
+                                </tr>
+                                <tr>
+                                    <td>ETH</td>
+                                    <td>2.56</td>
+                                    <td class="text-danger">↓12.56</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+             <!-- Buy/Sell Table -->
+             <div class="col-lg-8">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>CHART</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <h4 class="text-info">BUY</h4>
+                                <table class="table table-dark table-sm">
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <h4 class="text-danger">SELL</h4>
+                                <table class="table table-dark table-sm">
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table table-dark table-sm">
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table table-dark table-sm">
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- My Strategies Section -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>MY STRATEGIES</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="strategy-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">ROI</span>
+                                <span class="stat-value text-success">4.39%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">PROFIT</span>
+                                <span class="stat-value text-success">$33,952</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Chart -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>MARKET</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <!-- Placeholder for market chart -->
+                            <div class="placeholder-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buy/Sell Buttons -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-outline-info btn-lg">BUY</button>
+                            <button class="btn btn-outline-danger btn-lg">SELL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Percentage Display -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h2 class="display-4 text-center">515.9%</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signals Section -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>SIGNALS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="signal-controls">
+                            <div class="range-slider mb-3">
+                                <input type="range" class="form-range" min="0" max="100">
+                            </div>
+                            <div class="range-slider mb-3">
+                                <input type="range" class="form-range" min="0" max="100">
+                            </div>
+                            <div class="range-slider mb-3">
+                                <input type="range" class="form-range" min="0" max="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buy/Sell Signals -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>BUY/SELL SIGNALS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-outline-info btn-circle">B</button>
+                            <button class="btn btn-outline-info btn-circle">S</button>
+                            <button class="btn btn-outline-info btn-circle">M</button>
+                            <button class="btn btn-outline-info btn-circle">H</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy Performance -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>STRATEGY PERFORMANCE</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <!-- Placeholder for performance chart -->
+                            <div class="placeholder-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy Performance -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>STRATEGY PERFORMANCE</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <!-- Placeholder for performance chart -->
+                            <div class="placeholder-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy Performance -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>STRATEGY PERFORMANCE</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <!-- Placeholder for performance chart -->
+                            <div class="placeholder-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Smart Trader provides advanced trading tools and analytics for professional traders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="stat-item">
+                                <span class="stat-label">Daily Change</span>
+                                <span class="stat-value text-success">+3.5%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Weekly Change</span>
+                                <span class="stat-value text-danger">-1.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSI Indicator -->
+            <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>RSI</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="circular-progress small">
+                            <div class="progress-value">62</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buy/Sell Table -->
+            <div class="col-lg-8">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>BUY/SELL ORDERS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <h4 class="text-info">BUY</h4>
+                                <table class="table table-dark table-sm">
+                                    <tbody>
+                                        <tr>
+                                            <td>1,000.00</td>
+                                            <td>5,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>999.50</td>
+                                            <td>3,000.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <h4 class="text-danger">SELL</h4>
+                                <table class="table table-dark table-sm">
+                                    <tbody>
+                                        <tr>
+                                            <td>1,001.00</td>
+                                            <td>4,500.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1,001.50</td>
+                                            <td>2,500.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- About Us -->
+             <div class="col-lg-4">
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>ABOUT US</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Smart Trader provides advanced trading tools and analytics for professional traders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="col-lg-12">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-light">LOG OUT</button>
+                            <button class="btn btn-primary">TRADE NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
