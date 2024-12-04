@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printable Movie Ticket</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f9fc;
+    }
+    .container {
+      text-align: center;
+      width: 400px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="time"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: border 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    .print-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+    .print-button:hover {
+      background-color: #45a049;
+    }
+    .ticket {
+      width: 600px;
+      padding: 20px;
+      margin-top: 20px;
+      border: 2px dashed #333;
+      background-color: #fffbe6;
+      position: relative;
+      font-family: 'Courier New', Courier, monospace;
+      color: #333;
+      display: none;
+    }
+    .ticket-header {
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-align: center;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .ticket-subtitle {
+      font-size: 1em;
+      text-align: center;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .ticket-details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    .ticket-admit {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 1.2em;
+      transform: rotate(90deg);
+      font-weight: bold;
+    }
+    .welcome-message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1em;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Movie Ticket Booking</h2>
+    <div class="form-group">
+      <label for="userName">Your Name</label>
+      <input type="text" id="userName" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label for="seatNumber">Seat Number</label>
+      <input type="text" id="seatNumber" placeholder="e.g., A12" required>
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" id="date" required>
+    </div>
+    <div class="form-group">
+      <label for="time">Time</label>
+      <input type="time" id="time" required>
+    </div>
+    <button class="print-button">Generate Ticket</button>
+    
+    <div class="ticket" id="ticket">
+      <div class="ticket-header">Rubby Cinema Hall</div>
+      <div class="ticket-subtitle">Presented by: Abhilanke</div>
+      <div class="ticket-details">
+        <div><strong>Name:</strong> <span id="displayUserName"></span></div>
+        <div><strong>Seat:</strong> <span id="displaySeatNumber"></span></div>
+      </div>
+      <div class="ticket-details">
+        <div><strong>Price:</strong> ₹120</div>
+        <div><strong>Date:</strong> <span id="displayDate"></span></div>
+        <div><strong>Time:</strong> <span id="displayTime"></span></div>
+      </div>
+      <div class="ticket-admit">ADMIT ONE</div>
+      <div class="welcome-message">Welcome to Rubby Cinema Hall, Keep Enjoying</div>
+    </div>
+
+    <button class="print-button"style="display: none;" id="printButton">Print Ticket</button>
+  </div>
+
+  
+</body>
+</html>
